@@ -26,7 +26,7 @@ export default function SearchForm( {rickMortye, setRickMortye} ) {
 
   return (
     <section className="search-form">
-     // Add a search form here
+    {/*// Add a search form here*/}
       <form className="search">
         <input
           type="text"
