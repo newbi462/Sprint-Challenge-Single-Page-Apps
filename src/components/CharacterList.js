@@ -3,6 +3,8 @@ import axios from "axios";
 
 import styled from "styled-components";
 
+import SearchForm from "./SearchForm";
+
 const ForceFlex = styled.section`
   display: flex
   flex-flow: row wrap;
@@ -45,6 +47,10 @@ export default function CharacterList() {
   console.log(rickMortye);
 
   return (
+    <>
+
+    <SearchForm rickMortye={rickMortye} setRickMortye={setRickMortye} />
+
     <ForceFlex className="character-list">
       {/*<h2>TODO: `array.map()` over your state here!</h2>*/}
       {rickMortye.map(item => (
@@ -57,5 +63,7 @@ export default function CharacterList() {
         </CharCards>
       ))}
     </ForceFlex>
+
+    </>
   );
 }
