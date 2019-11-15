@@ -24,6 +24,14 @@ export default function Header() {
           {/*<a href="">About</a>*/}
           <Link to="/charaters">Charaters</Link>
         </div>
+        <div>
+          {/*<a href="">About</a>*/}
+          <Link to="/locations">Locations</Link>
+        </div>
+        <div>
+          {/*<a href="">About</a>*/}
+          <Link to="/episode">Episodes</Link>
+        </div>
       </ForceFlex>
     </header>
   );

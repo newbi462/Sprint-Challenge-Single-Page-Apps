@@ -6,7 +6,7 @@ export default function SearchForm( props ) {
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
-    axios.get(`https://rickandmortyapi.com/api/character/`)
+    axios.get(`https://rickandmortyapi.com/api/${props.slash}/`)
     .then(response => {
       const inSearchBar = response.data.results.filter(item =>
         item.name.toLowerCase().includes(searchValue.toLowerCase())
