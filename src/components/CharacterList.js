@@ -1,6 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import styled from "styled-components";
+
+const ForceFlex = styled.section`
+  display: flex
+  flex-flow: row wrap;
+  justify-content: space-around;
+`;
+
+const CharCards = styled.div`
+  color: #83d2e4;
+  width: 30%;
+  padding: 15px;
+  border-radius: 13px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  transition: transform 0.2s ease-in;
+  border: solid 3px #83d2e4;
+  text-shadow: 1px 1px #8b3f21;
+
+  &:hover {
+    transform: translate(-5px) scale(1.15);
+    border: solid 3px #8b3f21;
+  }
+`;
+
+
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [rickMortye, setRickMortye] = useState([])
@@ -19,17 +45,17 @@ export default function CharacterList() {
   console.log(rickMortye);
 
   return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+    <ForceFlex className="character-list">
+      {/*<h2>TODO: `array.map()` over your state here!</h2>*/}
       {rickMortye.map(item => (
-        <div key={item.id} className="charterCard">
-          <h2>{item.name}</h2>
+        <CharCards key={item.id} className="charterCard">
+          <h3>{item.name}</h3>
           <ul key={item.id}>
             <li>Status: {item.status}</li>
             <li>Species: {item.species}</li>
           </ul>
-        </div>
+        </CharCards>
       ))}
-    </section>
+    </ForceFlex>
   );
 }
