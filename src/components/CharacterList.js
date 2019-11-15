@@ -21,6 +21,15 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <h2>TODO: `array.map()` over your state here!</h2>
+      {rickMortye.map(item => (
+        <div key={item.id} className="charterCard">
+          <h2>{item.name}</h2>
+          <ul key={item.id}>
+            <li>Status: {item.status}</li>
+            <li>Species: {item.species}</li>
+          </ul>
+        </div>
+      ))}
     </section>
   );
 }
