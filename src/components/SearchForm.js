@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function SearchForm( {rickMortye, setRickMortye} ) {
+export default function SearchForm( props ) {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function SearchForm( {rickMortye, setRickMortye} ) {
       const inSearchBar = response.data.results.filter(item =>
         item.name.toLowerCase().includes(searchValue.toLowerCase())
       );
-      setRickMortye(inSearchBar);
+      props.setState(inSearchBar);
 
     })
     .catch( error => {

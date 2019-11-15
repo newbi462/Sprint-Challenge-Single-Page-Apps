@@ -49,7 +49,7 @@ export default function CharacterList() {
   return (
     <>
 
-    <SearchForm rickMortye={rickMortye} setRickMortye={setRickMortye} />
+    <SearchForm state={rickMortye} setState={setRickMortye} />
 
     <ForceFlex className="character-list">
       {/*<h2>TODO: `array.map()` over your state here!</h2>*/}
