@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: It is much lighter on the server/hosting as there are no calls, all changes for the most part happen client side; it can also be a cleaner UI/UX because there is no page refresh flash, and so on... Dynamic content using the CLIENT RESOURCES when done right for the most part.
 
 ## Project Set Up
 

@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function LocationCard({ name, type, dimension, residents }) {
-  return <span>todo: location</span>;
+import LocationsList from "./LocationsList";
+
+export default function CharacterCard() {
+  return (
+    <>
+      <LocationsList />
+    </>
+  );
 }

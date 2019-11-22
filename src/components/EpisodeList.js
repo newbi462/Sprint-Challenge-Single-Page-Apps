@@ -11,7 +11,7 @@ const ForceFlex = styled.section`
   justify-content: space-around;
 `;
 
-const CharCards = styled.div`
+const EpCards = styled.div`
   color: #83d2e4;
   width: 30%;
   padding: 15px;
@@ -29,39 +29,35 @@ const CharCards = styled.div`
 `;
 
 
-export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
-  const [rickMortye, setRickMortye] = useState([])
-  const [thisapi] = useState("character")
+export default function EpisodeList() {
+  const [ep, setEp] = useState([])
+  const [thisapi] = useState("episode")
 
   useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
     axios.get(`https://rickandmortyapi.com/api/${thisapi}/`)
     .then(response => {
-      console.log(response.data.results)
-      setRickMortye(response.data.results)
+      setEp(response.data.results)
     })
     .catch( error => {
       console.log("error", error.message)
     })
-  },[])//  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  console.log(rickMortye);
+  },[])
 
   return (
     <>
 
-    <SearchForm state={rickMortye} setState={setRickMortye} slash={thisapi} />
+    <SearchForm state={ep} setState={setEp} slash={thisapi} />
 
-    <ForceFlex className="character-list">
+    <ForceFlex className="ep-list">
       {/*<h2>TODO: `array.map()` over your state here!</h2>*/}
-      {rickMortye.map(item => (
-        <CharCards key={item.id} className="charterCard">
+      {ep.map(item => (
+        <EpCards key={item.id} className="epCard">
           <h3>{item.name}</h3>
           <ul key={item.id}>
-            <li>Status: {item.status}</li>
-            <li>Species: {item.species}</li>
+            <li>Air Date: {item.air_date}</li>
+            <li>Dimension: {item.episode}</li>
           </ul>
-        </CharCards>
+        </EpCards>
       ))}
     </ForceFlex>
 
